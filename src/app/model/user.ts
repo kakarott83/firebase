@@ -1,7 +1,6 @@
 export interface User {
-    key?: string;
-    name?: string;
-    firstname?: string;
+    uid: string;
     email?: string;
     password?: string;
+    emailVerified?: boolean;
 }
