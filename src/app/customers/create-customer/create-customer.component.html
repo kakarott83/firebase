@@ -1,0 +1,40 @@
+<h3>Create Customer</h3>
+<div [hidden]="submitted" style="width: 300px;">
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="email">E-Mail</label>
+      <input type="text" class="form-control" id="email" required [(ngModel)]="customer.email" name="email">
+    </div>
+    <div class="form-group">
+        <label for="password">Password</label>
+        <input type="text" class="form-control" id="password" required [(ngModel)]="customer.password" name="password">
+    </div>
+    <div class="form-group">
+        <label for="firstname">Vorname</label>
+        <input type="text" class="form-control" id="firstname" required [(ngModel)]="customer.firstname" name="firstname">
+    </div>
+
+    <ng-container *ngIf="customer.lastname === 'Mager'; else elseTemplate">
+      Hello World
+    </ng-container>
+    <ng-template #elseTemplate>
+      Test
+    </ng-template>
+    
+
+    <div class="form-group">
+        <label for="lastname">Name</label>
+        <input type="text" class="form-control" id="lastname" required [(ngModel)]="customer.lastname" name="lastname">
+    </div>
+    <div class="form-group">
+        <label for="info">Info</label>
+        <input type="text" class="form-control" id="info" [(ngModel)]="infos.value" name="info">
+    </div>
+    <button type="submit" class="btn btn-success">Submit</button>
+  </form>
+</div>
+ 
+<div [hidden]="!submitted">
+  <h4>You submitted successfully!</h4>
+  <button class="btn btn-success" (click)="newCustomer()">Add</button>
+</div>

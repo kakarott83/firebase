@@ -1,0 +1,12 @@
+<mat-card class="container">
+    <mat-card-header>
+        <mat-card-title>Login</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <form #myLoginForm="ngForm" (ngSubmit)="onSubmit()">
+            <input matInput type="text" [(ngModel)]="user.email" name="email" placeholder="E-Mail">
+            <input matInput type="password" [(ngModel)]="user.password" name="password" placeholder="Password">
+            <button mat-raised-button type="submit">Login</button>
+        </form>
+    </mat-card-content>
+</mat-card>
